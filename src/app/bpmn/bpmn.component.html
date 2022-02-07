@@ -1,0 +1,165 @@
+
+<p-card>
+    <ng-template pTemplate="header">
+        Process Definitions
+    </ng-template>
+
+    <div>
+        <ol>
+            <li *ngFor="let process of processDefinitions">
+                <ul>
+                    <li *ngFor="let item of process | keyvalue">
+                        {{item.key}}: {{item.value}}
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <ng-template pTemplate="footer">
+        
+    </ng-template>
+</p-card>
+
+<p-card>
+    <ng-template pTemplate="header">
+        Process Definitions
+    </ng-template>
+    
+    <div>
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText [(ngModel)]="keyOfProcessToStart"> 
+            <label for="float-input">Process Definition Key</label>
+        </span>
+
+        <p-button label="Start Process" (onClick)="startProcessByKey($event)" ></p-button>
+    </div>
+
+    <ng-template pTemplate="footer">
+        
+    </ng-template>
+</p-card>
+
+<p-card>
+    <ng-template pTemplate="header">
+        Process Instances
+    </ng-template>
+
+    <div>
+        <ol>
+            <li *ngFor="let process of processInstances">
+                <ul>
+                    <li *ngFor="let item of process | keyvalue">
+                        {{item.key}}: {{item.value}}
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <ng-template pTemplate="footer">
+        
+    </ng-template>
+</p-card>
+
+<p-card>
+    <ng-template pTemplate="header">
+        Enter Process Instance Id
+    </ng-template>
+    
+    <div>
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText [(ngModel)]="processInstanceId"> 
+            <label for="float-input">Process Instance Id</label>
+        </span>
+
+        <p-button label="Start Process" (onClick)="subscribeToTasksByProcessInstanceId($event)" ></p-button>
+    </div>
+
+    <ng-template pTemplate="footer">
+        
+    </ng-template>
+</p-card>
+
+<p-card>
+    <ng-template pTemplate="header">
+       Tasks
+    </ng-template>
+
+    <div>
+        <ol>
+            <li *ngFor="let task of tasks">
+                <ul>
+                    <li *ngFor="let item of task | keyvalue">
+                        {{item.key}}: {{item.value}}
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <ng-template pTemplate="footer">
+        
+    </ng-template>
+</p-card>
+
+<p-card>
+    <ng-template pTemplate="header">
+        Enter Task Id
+    </ng-template>
+    
+    <div>
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText [(ngModel)]="taskId"> 
+            <label for="float-input">Task Id</label>
+        </span>
+
+        <p-button label="Show Varibles" (onClick)="subscribeToVariablesByTaskId($event)"></p-button>
+        <p-button label="Show Form Variables" (onClick)="subscribeToTaskFormVariablesByTaskId($event)"></p-button>
+        <p-button label="Claim Task For Admin" (onClick)="claimTaskForAdminByTaskId($event)"></p-button>
+        <p-button label="Unclaim Task" (onClick)="unclaimTaskByTaskId($event)"></p-button>
+        <p-button label="Get Form" (onClick)="getRenderedFormforTaskByTaskId($event)"></p-button>
+    </div>
+
+    <div [innerHtml]="currentForm"></div>
+</p-card>
+
+<p-card>
+    <ng-template pTemplate="header">
+       Variables
+    </ng-template>
+
+    <div>
+        <ol>
+            <li *ngFor="let variable of taskVariables">
+                <ul>
+                    <li *ngFor="let item of variable | keyvalue">
+                        {{item.key}}: {{item.value}}
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <ng-template pTemplate="footer">
+        
+    </ng-template>
+</p-card>
+
+<p-card>
+    <ng-template pTemplate="header">
+       Form Variables
+    </ng-template>
+
+    <div>
+        <ol>
+            <li *ngFor="let variable of taskFormVariables">
+                {{variable | json}}
+            </li>
+        </ol>
+    </div>
+
+    <ng-template pTemplate="footer">
+        
+    </ng-template>
+</p-card>
