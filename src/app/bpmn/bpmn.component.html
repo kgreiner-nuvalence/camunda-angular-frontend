@@ -23,7 +23,7 @@
 
 <p-card>
     <ng-template pTemplate="header">
-        Process Definitions
+        Start a Process Instance
     </ng-template>
     
     <div>
@@ -64,7 +64,7 @@
 
 <p-card>
     <ng-template pTemplate="header">
-        Enter Process Instance Id
+        Process Instance Actions
     </ng-template>
     
     <div>
@@ -73,7 +73,22 @@
             <label for="float-input">Process Instance Id</label>
         </span>
 
-        <p-button label="Start Process" (onClick)="subscribeToTasksByProcessInstanceId($event)" ></p-button>
+        <p-button label="Find Tasks" (onClick)="subscribeToTasksByProcessInstanceId($event)" ></p-button>
+        <p-button label="Find Process Instance Variables" (onClick)="getProcessInstanceVariablesByProcessInstanceId($event)" ></p-button>
+    </div>
+
+    <ng-template pTemplate="footer">
+        
+    </ng-template>
+</p-card>
+
+<p-card>
+    <ng-template pTemplate="header">
+       Process Instance Variables
+    </ng-template>
+
+    <div>
+       {{instanceVariables | json}}
     </div>
 
     <ng-template pTemplate="footer">
@@ -105,7 +120,7 @@
 
 <p-card>
     <ng-template pTemplate="header">
-        Enter Task Id
+        Task Actions
     </ng-template>
     
     <div>
