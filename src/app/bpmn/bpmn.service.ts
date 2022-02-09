@@ -10,7 +10,7 @@ import { Task } from './task';
 export class BpmnService {
   private bpmnBaseUrl: string;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.bpmnBaseUrl = 'http://localhost:8080/engine-rest'
   }
 
@@ -20,6 +20,10 @@ export class BpmnService {
 
   startProcessByKey(processKey: string): Observable<any> {
     return this.http.post<any>(`${this.bpmnBaseUrl}/process-definition/key/${processKey}/start`, {});
+  }
+
+  findAllTasks() {
+    return this.http.get<any>(this.bpmnBaseUrl + '/task');
   }
 
   findTasksByProcessInstanceId(processInstanceId: string) {
@@ -38,6 +42,10 @@ export class BpmnService {
     return this.http.get<any>(`${this.bpmnBaseUrl}/task/${taskId}/form-variables`);
   }
 
+  submitTaskFormVariablesByTaskId(taskId: string, body: {}) {
+    return this.http.post<any>(`${this.bpmnBaseUrl}/task/${taskId}/submit-form`, body);
+  }
+
   claimTaskByTaskId(taskId: string) {
     return this.http.post<any>(`${this.bpmnBaseUrl}/task/${taskId}/claim`, {'userId': 'admin'});
   }
@@ -53,7 +61,7 @@ export class BpmnService {
       'Access-Control-Allow-Headers': 'Content-Type',
     }
 
-    const requestOptions = {                                                                                                                                                                                 
+    const requestOptions = {
       headers: new HttpHeaders(headerDict),
       responseType: 'text' as const
     };

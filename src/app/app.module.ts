@@ -12,11 +12,21 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormioMappingComponent} from "./mapping/formioMapping.component";
+import {HeaderComponent} from "./header/header.component";
+import {FooterComponent} from "./footer/footer.component";
+import {MenuComponent} from "./menu/menu.component";
+import {StepsModule} from "primeng/steps";
+import {DropdownModule} from "primeng/dropdown";
 
 @NgModule({
   declarations: [
     AppComponent,
-    BpmnComponent
+    BpmnComponent,
+    FormioMappingComponent,
+    HeaderComponent,
+    FooterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +37,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     ButtonModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    StepsModule,
+    DropdownModule
   ],
   providers: [
     BpmnService
