@@ -21,6 +21,7 @@ export class BpmnComponent implements OnInit {
   keyOfProcessToStart: string = '';
   processInstanceId: string = '';
   taskId: string = '';
+  instanceVariables: any = {};
 
   constructor(
     private bpmnService: BpmnService,
@@ -102,6 +103,16 @@ export class BpmnComponent implements OnInit {
     this.bpmnService.getRenderedFormforTaskByTaskId(this.taskId).subscribe({
       next: (next) => {
         this.currentForm = this.sanitizer.bypassSecurityTrustHtml(next.toString());
+      },
+      error: () => {},
+      complete: () => {}
+    });
+  }
+
+  getProcessInstanceVariablesByProcessInstanceId(event: any) {
+    this.bpmnService.getAllProcessInstanceVariablesByProcessInstanceId(this.processInstanceId).subscribe({
+      next: (next) => {
+        this.instanceVariables = next;
       },
       error: () => {},
       complete: () => {}

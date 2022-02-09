@@ -68,4 +68,8 @@ export class BpmnService {
 
     return this.http.get(`${this.bpmnBaseUrl}/task/${taskId}/rendered-form`, requestOptions);
   }
+
+  getAllProcessInstanceVariablesByProcessInstanceId(processInstanceId: string) {
+    return this.http.get(`${this.bpmnBaseUrl}/process-instance/${processInstanceId}/variables`)
+  }
 }
