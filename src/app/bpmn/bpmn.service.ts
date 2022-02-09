@@ -42,8 +42,9 @@ export class BpmnService {
     return this.http.get<any>(`${this.bpmnBaseUrl}/task/${taskId}/form-variables`);
   }
 
-  submitTaskFormVariablesByTaskId(taskId: string, body: {}) {
-    return this.http.post<any>(`${this.bpmnBaseUrl}/task/${taskId}/submit-form`, body);
+  submitTaskFormVariablesByTaskId(taskId: string, variables: {}) {
+    console.log({variables});
+    return this.http.post<any>(`${this.bpmnBaseUrl}/task/${taskId}/submit-form`, {variables});
   }
 
   claimTaskByTaskId(taskId: string) {

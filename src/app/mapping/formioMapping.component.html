@@ -1,16 +1,33 @@
 <app-header></app-header>
 <!--<app-menu></app-menu>-->
 
-<h5>Choose an application journey to begin:</h5>
-<p-dropdown [options]="processDefinitions" [(ngModel)]="selectedProcessDefinitions" optionLabel="key"></p-dropdown>
-<p-button label="Submit" (click)="handleClick($event)"></p-button>
+<div class="p-fluid grid" id="main">
+  <div *ngIf="processInstanceId === ''">
+    <div class="field col-12 md:col-4">
+      <h5>Choose an application journey to begin:</h5>
+      <p-dropdown [options]="processDefinitions" [(ngModel)]="selectedProcessDefinitions" optionLabel="key"></p-dropdown>
+      <p-button label="Submit" (click)="handleClick($event)"></p-button>
+    </div>
+  </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
+  <div *ngIf="endOfProcess === false">
+    <div class="field col-12 md:col-4">
       <div id="CamundaTaskList"></div>
     </div>
   </div>
+
+  <div *ngIf="endOfProcess === true" id="finalResults">
+    <h2>Review Form Results</h2>
+    <p-divider></p-divider>
+    <div *ngFor="let taskObj of submittedTaskFormVariables">
+      <div class="field col-12 md:col-4">
+        <h6>{{taskObj.label}}</h6>
+        <input id="disabled-input" type="text" pInputText [disabled]=true [(ngModel)]=taskObj.placeholder />
+      </div>
+    </div>
+    <p-button label="Finish" (click)="finishForm($event)"></p-button>
+  </div>
+
 </div>
 
 <app-footer></app-footer>

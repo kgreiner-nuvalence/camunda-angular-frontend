@@ -18,6 +18,7 @@ import {FooterComponent} from "./footer/footer.component";
 import {MenuComponent} from "./menu/menu.component";
 import {StepsModule} from "primeng/steps";
 import {DropdownModule} from "primeng/dropdown";
+import {DividerModule} from "primeng/divider";
 
 @NgModule({
   declarations: [
@@ -28,19 +29,20 @@ import {DropdownModule} from "primeng/dropdown";
     FooterComponent,
     MenuComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    InputTextModule,
-    CardModule,
-    StepsModule,
-    DropdownModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ButtonModule,
+        InputTextModule,
+        CardModule,
+        StepsModule,
+        DropdownModule,
+        DividerModule
+    ],
   providers: [
     BpmnService
   ],
