@@ -19,6 +19,8 @@ import {MenuComponent} from "./menu/menu.component";
 import {StepsModule} from "primeng/steps";
 import {DropdownModule} from "primeng/dropdown";
 import {DividerModule} from "primeng/divider";
+import {FormioModule} from "angular-formio";
+import {BuilderComponent} from "./builder/builder.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {DividerModule} from "primeng/divider";
     FormioMappingComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    BuilderComponent
   ],
     imports: [
         BrowserModule,
@@ -41,7 +44,8 @@ import {DividerModule} from "primeng/divider";
         CardModule,
         StepsModule,
         DropdownModule,
-        DividerModule
+        DividerModule,
+        FormioModule
     ],
   providers: [
     BpmnService
