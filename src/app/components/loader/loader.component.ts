@@ -33,7 +33,7 @@ export class LoaderComponent implements OnInit {
 
   private _loadForm(): void {
     console.log({components: this.selected});
-     this.formSrc = {components: this.selected};
+    this.formSrc = {components: this.selected};
   }
 
 }
