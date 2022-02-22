@@ -1,0 +1,11 @@
+<h4>Select a Form IO Template</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Template Component</mat-label>
+  <mat-select [formControl]="formIoControl" [(value)]="selected">
+    <mat-option *ngFor="let template of formIoTemplates" [value]="template.components">
+      {{ template.templateId }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<formio *ngIf="formSrc" [form]="formSrc"></formio>

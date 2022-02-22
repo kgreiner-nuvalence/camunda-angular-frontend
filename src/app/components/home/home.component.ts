@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ThemePalette} from "@angular/material/core";
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -28,10 +27,13 @@ export class HomeComponent implements OnInit {
     {
       title: 'Builder',
       route: '/builder'
+    },
+    {
+      title: 'Loader',
+      route: '/loader'
     }];
 
-  public ngOnInit(): void {
-  }
+  public ngOnInit(): void {}
 
   public onRouteClicked(route: string): void {
     this._router.navigate([route]);

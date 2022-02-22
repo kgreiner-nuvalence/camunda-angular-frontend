@@ -23,6 +23,10 @@ import {FormioModule} from "angular-formio";
 import {BuilderComponent} from "./components/builder/builder.component";
 import { HomeComponent } from './components/home/home.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {ResourcesModule} from "./resources/resources.module";
+import { LoaderComponent } from './components/loader/loader.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -33,24 +37,29 @@ import {MatTabsModule} from '@angular/material/tabs';
     FooterComponent,
     MenuComponent,
     BuilderComponent,
-    HomeComponent
+    HomeComponent,
+    LoaderComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        ButtonModule,
-        InputTextModule,
-        CardModule,
-        StepsModule,
-        DropdownModule,
-        DividerModule,
-        FormioModule,
-      MatTabsModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    FormioModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    InputTextModule,
+    CardModule,
+    StepsModule,
+    DropdownModule,
+    DividerModule,
+    FormioModule,
+    ResourcesModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatSelectModule
+  ],
   providers: [
     BpmnService
   ],

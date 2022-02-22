@@ -1,2 +1,11 @@
-<form-builder [form]="{
-  components: [] }"></form-builder>
+<form-builder [form]="formIo"></form-builder>
+
+<form [formGroup]="form">
+  Form ID
+  <input formControlName="formIoName" />
+</form>
+
+<button
+(click)="onSaveForm()">
+  Save Form
+</button>
