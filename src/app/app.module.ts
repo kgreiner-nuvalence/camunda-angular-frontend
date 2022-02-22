@@ -5,22 +5,24 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BpmnComponent } from './bpmn/bpmn.component';
-import { BpmnService } from './bpmn/bpmn.service';
+import { BpmnComponent } from './components/bpmn/bpmn.component';
+import { BpmnService } from './components/bpmn/bpmn.service';
 
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {FormioMappingComponent} from "./mapping/formioMapping.component";
-import {HeaderComponent} from "./header/header.component";
-import {FooterComponent} from "./footer/footer.component";
-import {MenuComponent} from "./menu/menu.component";
+import {FormioMappingComponent} from "./components/mapping/formioMapping.component";
+import {HeaderComponent} from "./components/header/header.component";
+import {FooterComponent} from "./components/footer/footer.component";
+import {MenuComponent} from "./components/menu/menu.component";
 import {StepsModule} from "primeng/steps";
 import {DropdownModule} from "primeng/dropdown";
 import {DividerModule} from "primeng/divider";
 import {FormioModule} from "angular-formio";
-import {BuilderComponent} from "./builder/builder.component";
+import {BuilderComponent} from "./components/builder/builder.component";
+import { HomeComponent } from './components/home/home.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {BuilderComponent} from "./builder/builder.component";
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    BuilderComponent
+    BuilderComponent,
+    HomeComponent
   ],
     imports: [
         BrowserModule,
@@ -45,7 +48,8 @@ import {BuilderComponent} from "./builder/builder.component";
         StepsModule,
         DropdownModule,
         DividerModule,
-        FormioModule
+        FormioModule,
+      MatTabsModule
     ],
   providers: [
     BpmnService

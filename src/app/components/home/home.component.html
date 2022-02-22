@@ -1,0 +1,11 @@
+<app-header></app-header>
+<h1>Routes</h1>
+<div class="routes" *ngFor="let link of links">
+  <div
+    (click)="onRouteClicked(link.route)">
+    <h2>{{ link.title }}</h2>
+    <h3>{{ link.route }}</h3>
+  </div>
+
+</div>
+<app-footer></app-footer>
