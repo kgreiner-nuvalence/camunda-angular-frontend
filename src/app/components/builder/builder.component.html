@@ -6,6 +6,7 @@
 </form>
 
 <button
-(click)="onSaveForm()">
+  [disabled]="form.invalid"
+  (click)="onSaveForm()">
   Save Form
 </button>

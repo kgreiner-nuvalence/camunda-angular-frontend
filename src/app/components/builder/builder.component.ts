@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormsStore} from "../../resources/forms-store";
-import {Form, FormControl, FormControlName, FormGroup} from "@angular/forms";
+import {Form, FormControl, FormControlName, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-builder',
@@ -20,7 +20,7 @@ export class BuilderComponent implements OnInit {
   // PROPERTIES
 
   public form: FormGroup = new FormGroup({
-    'formIoName': new FormControl(null)
+    'formIoName': new FormControl(null, Validators.required)
   });
   public formIo = {components: [] = []};
 
