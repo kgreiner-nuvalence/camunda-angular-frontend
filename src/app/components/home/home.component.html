@@ -1,0 +1,7 @@
+<h1>Routes</h1>
+<div class="routes" *ngFor="let link of links">
+  <div
+    (click)="onRouteClicked(link.route)">
+    <h2>{{ link.title }}</h2>
+  </div>
+</div>

@@ -5,22 +5,28 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BpmnComponent } from './bpmn/bpmn.component';
-import { BpmnService } from './bpmn/bpmn.service';
+import { BpmnComponent } from './components/bpmn/bpmn.component';
+import { BpmnService } from './components/bpmn/bpmn.service';
 
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {FormioMappingComponent} from "./mapping/formioMapping.component";
-import {HeaderComponent} from "./header/header.component";
-import {FooterComponent} from "./footer/footer.component";
-import {MenuComponent} from "./menu/menu.component";
+import {FormioMappingComponent} from "./components/mapping/formioMapping.component";
+import {HeaderComponent} from "./components/header/header.component";
+import {FooterComponent} from "./components/footer/footer.component";
+import {MenuComponent} from "./components/menu/menu.component";
 import {StepsModule} from "primeng/steps";
 import {DropdownModule} from "primeng/dropdown";
 import {DividerModule} from "primeng/divider";
 import {FormioModule} from "angular-formio";
-import {BuilderComponent} from "./builder/builder.component";
+import {BuilderComponent} from "./components/builder/builder.component";
+import { HomeComponent } from './components/home/home.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {ResourcesModule} from "./resources/resources.module";
+import { LoaderComponent } from './components/loader/loader.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -30,23 +36,30 @@ import {BuilderComponent} from "./builder/builder.component";
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    BuilderComponent
+    BuilderComponent,
+    HomeComponent,
+    LoaderComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        ButtonModule,
-        InputTextModule,
-        CardModule,
-        StepsModule,
-        DropdownModule,
-        DividerModule,
-        FormioModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    FormioModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    InputTextModule,
+    CardModule,
+    StepsModule,
+    DropdownModule,
+    DividerModule,
+    FormioModule,
+    ResourcesModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatSelectModule
+  ],
   providers: [
     BpmnService
   ],

@@ -1,0 +1,12 @@
+<form-builder [form]="formIo"></form-builder>
+
+<form [formGroup]="form">
+  Form ID
+  <input formControlName="formIoName" />
+</form>
+
+<button
+  [disabled]="form.invalid"
+  (click)="onSaveForm()">
+  Save Form
+</button>
