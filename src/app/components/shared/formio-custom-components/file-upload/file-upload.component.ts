@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, ElementRef, ViewChild} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -16,11 +16,13 @@ export class FileUploadComponent {
 
   // PROPERTIES
 
-  public fileName = '';
+  @ViewChild('fileUpload') input: ElementRef;
+
+  public fileName = null;
 
   // PUBLIC METHODS
 
-  public onFileSelected(event: any) {
+  public onFileSelected(event: any): void {
 
     const file:File = event.target.files[0];
 
@@ -32,9 +34,14 @@ export class FileUploadComponent {
 
       formData.append("thumbnail", file);
 
-      const upload$ = this._httpClient.post("/api/thumbnail-upload", formData);
-
-      upload$.subscribe();
+      // todo: post to our own file storage
+      // const upload$ = this._httpClient.post("/api/thumbnail-upload", formData);
+      // upload$.subscribe();
     }
+  }
+
+  public onFileCanceled(): void {
+    this.fileName = null;
+    this.input.nativeElement.value = '';
   }
 }
