@@ -29,6 +29,10 @@ export class HomeComponent implements OnInit {
       route: '/builder'
     },
     {
+      title: 'Builder Localize',
+      route: '/builder-localize'
+    },
+    {
       title: 'Loader',
       route: '/loader'
     }];
