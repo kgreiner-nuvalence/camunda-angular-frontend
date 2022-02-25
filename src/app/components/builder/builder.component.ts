@@ -24,6 +24,14 @@ export class BuilderComponent implements OnInit {
   });
   public formIo = {components: [] = []};
 
+  options = {
+    builder: {
+      premium: false
+    },
+    language: 'en',
+    i18n: {}
+  };
+
   // PUBLIC METHODS
 
   public ngOnInit() {
