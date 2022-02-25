@@ -5,7 +5,7 @@ import { FileUploadComponent } from "./file-upload.component";
 const COMPONENT_OPTIONS: FormioCustomComponentInfo = {
   type: 'file', // custom type. Formio will identify the field with this type.
   selector: 'file-upload', // custom selector. Angular Elements will create a custom html tag with this selector
-  title: 'File Upload', // Title of the component
+  title: ' Custom File Upload', // Title of the component
   group: 'basic', // Build Group
   icon: 'file', // Icon
 //  template: 'file', // Optional: define a template for the element. Default: input

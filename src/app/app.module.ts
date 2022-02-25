@@ -21,6 +21,7 @@ import { StepsModule } from "primeng/steps";
 import { BpmnComponent } from './components/bpmn/bpmn.component';
 import { BpmnService } from './components/bpmn/bpmn.service';
 import { BuilderComponent } from "./components/builder/builder.component";
+import {BuilderLocalizeComponent} from "./components/builder-localize/builder-localize.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { FormioMappingComponent } from "./components/mapping/formioMapping.component";
 import { HomeComponent } from './components/home/home.component';
@@ -32,6 +33,7 @@ import { LoaderComponent } from './components/loader/loader.component';
   declarations: [
     AppComponent,
     BuilderComponent,
+    BuilderLocalizeComponent,
     BpmnComponent,
     FooterComponent,
     FormioMappingComponent,
