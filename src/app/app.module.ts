@@ -21,6 +21,7 @@ import {DropdownModule} from "primeng/dropdown";
 import {DividerModule} from "primeng/divider";
 import {FormioModule} from "angular-formio";
 import {BuilderComponent} from "./components/builder/builder.component";
+import {BuilderLocalizeComponent} from "./components/builder-localize/builder-localize.component"
 import { HomeComponent } from './components/home/home.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {ResourcesModule} from "./resources/resources.module";
@@ -37,6 +38,7 @@ import {MatSelectModule} from "@angular/material/select";
     FooterComponent,
     MenuComponent,
     BuilderComponent,
+    BuilderLocalizeComponent,
     HomeComponent,
     LoaderComponent
   ],
