@@ -1,66 +1,64 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule} from '@angular/common/http'
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ButtonModule } from 'primeng/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { CardModule } from 'primeng/card';
+import { DividerModule } from "primeng/divider";
+import { DropdownModule } from "primeng/dropdown";
+import { FormioModule } from "angular-formio";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http'
+import { InputTextModule } from 'primeng/inputtext';
+import { MatSelectModule } from "@angular/material/select";
+import { ResourcesModule } from "./resources/resources.module";
+import { SharedComponentsModule } from "./components/shared/shared-components.module";
+import { StepsModule } from "primeng/steps";
+
+
 import { BpmnComponent } from './components/bpmn/bpmn.component';
 import { BpmnService } from './components/bpmn/bpmn.service';
-
-import {ButtonModule} from 'primeng/button';
-import {InputTextModule} from 'primeng/inputtext';
-import {CardModule} from 'primeng/card';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {FormioMappingComponent} from "./components/mapping/formioMapping.component";
-import {HeaderComponent} from "./components/header/header.component";
-import {FooterComponent} from "./components/footer/footer.component";
-import {MenuComponent} from "./components/menu/menu.component";
-import {StepsModule} from "primeng/steps";
-import {DropdownModule} from "primeng/dropdown";
-import {DividerModule} from "primeng/divider";
-import {FormioModule} from "angular-formio";
-import {BuilderComponent} from "./components/builder/builder.component";
-import {BuilderLocalizeComponent} from "./components/builder-localize/builder-localize.component"
+import { BuilderComponent } from "./components/builder/builder.component";
+import {BuilderLocalizeComponent} from "./components/builder-localize/builder-localize.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { FormioMappingComponent } from "./components/mapping/formioMapping.component";
 import { HomeComponent } from './components/home/home.component';
-import {MatTabsModule} from '@angular/material/tabs';
-import {ResourcesModule} from "./resources/resources.module";
+import { HeaderComponent } from "./components/header/header.component";
+import { MenuComponent } from "./components/menu/menu.component";
 import { LoaderComponent } from './components/loader/loader.component';
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
     AppComponent,
-    BpmnComponent,
-    FormioMappingComponent,
-    HeaderComponent,
-    FooterComponent,
-    MenuComponent,
     BuilderComponent,
     BuilderLocalizeComponent,
+    BpmnComponent,
+    FooterComponent,
+    FormioMappingComponent,
+    HeaderComponent,
     HomeComponent,
-    LoaderComponent
+    LoaderComponent,
+    MenuComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    FormioModule,
-    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BrowserModule,
     ButtonModule,
-    InputTextModule,
     CardModule,
-    StepsModule,
-    DropdownModule,
     DividerModule,
+    DropdownModule,
     FormioModule,
+    FormsModule,
+    HttpClientModule,
+    InputTextModule,
+    MatSelectModule,
+    ReactiveFormsModule,
     ResourcesModule,
-    MatTabsModule,
-    MatFormFieldModule,
-    MatSelectModule
+    SharedComponentsModule,
+    StepsModule
   ],
   providers: [
     BpmnService
