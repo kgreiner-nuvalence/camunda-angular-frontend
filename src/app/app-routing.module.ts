@@ -1,3 +1,4 @@
+import { TrimanBuilderComponent } from './triman-builder/triman-builder.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BpmnComponent } from './components/bpmn/bpmn.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'builder', component: BuilderComponent},
   {path: 'builder-localize', component: BuilderLocalizeComponent},
   {path: 'loader', component: LoaderComponent},
+  {path: 'triman', component: TrimanBuilderComponent},
   {path: '*', component: BpmnComponent}
 ];
 
