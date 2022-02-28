@@ -1,0 +1,47 @@
+.active {
+  border: 1px #375f9b;
+}
+.btn-group {
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+.card-content {
+  h2 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+.flex-container {
+  display: flex;
+}
+
+.btn-outline-primary {
+  color: black;
+  background-color: white;
+  border: 0;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 0 10px 3px #d3d3d3;
+}
+.btn-outline-primary.active {
+  color: black;
+  border: 2px solid #375f9b;
+}
+.btn-outline-primary:hover {
+  border: 2px solid #375f9b;
+  background-color: rgba(120, 120, 120, 0.15);
+}
+
+.radio-card-input {
+  border-radius: 8px;
+  visibility: hidden;
+}
+
+// what is this stuff?
+.btn-group > .btn:nth-child(n+3), .btn-group > :not(.btn-check) + .btn, .btn-group > .btn-group:not(:first-child) > .btn {
+  border-radius: 8px;
+}
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
+  border-radius: 8px;
+}
